@@ -76,11 +76,19 @@
                     <addResources>true</addResources>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.6.0</version>
+                <configuration>
+                    <mainClass>com.quadbaze.microservice.client.MicroserviceClientApplication</mainClass>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
     <!-- repository (optional) only needed for milestones -->
-    <!--<repositories>
+    <repositories>
         <repository>
             <id>spring-milestones</id>
             <name>Spring Milestones</name>
@@ -89,7 +97,7 @@
                 <enabled>false</enabled>
             </snapshots>
         </repository>
-    </repositories>-->
+    </repositories>
 
 </project>
 
