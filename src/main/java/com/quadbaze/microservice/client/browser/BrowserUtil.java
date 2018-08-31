@@ -13,19 +13,19 @@ import java.net.URISyntaxException;
 public class BrowserUtil {
 
     public static void browse(String url) {
-        if(Desktop.isDesktopSupported()){
+        if (Desktop.isDesktopSupported()) {
             Desktop desktop = Desktop.getDesktop();
             try {
                 desktop.browse(new URI(url));
             } catch (IOException | URISyntaxException ex) {
                 ex.printStackTrace();
             }
-        }else{
+        } else {
             launchPlatformBrowser(Runtime.getRuntime(), url);
         }
     }
 
-    private static void launchPlatformBrowser(Runtime runtime, String url){
+    private static void launchPlatformBrowser(Runtime runtime, String url) {
         try {
             attemptLinuxLauncher(runtime, url);
         } catch (IOException ex) {
@@ -41,15 +41,15 @@ public class BrowserUtil {
         }
     }
 
-    private static void attemptLinuxLauncher(Runtime runtime, String url) throws IOException{
+    private static void attemptLinuxLauncher(Runtime runtime, String url) throws IOException {
         runtime.exec("xdg-open " + url);
     }
 
-    private static void attemptWindowsLauncher(Runtime runtime, String url) throws IOException{
+    private static void attemptWindowsLauncher(Runtime runtime, String url) throws IOException {
         runtime.exec("rundll32 url.dll,FileProtocolHandler " + url);
     }
 
-    private static void attemptMacLauncher(Runtime runtime, String url) throws IOException{
+    private static void attemptMacLauncher(Runtime runtime, String url) throws IOException {
         runtime.exec("open " + url);
     }
 
