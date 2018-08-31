@@ -89,7 +89,7 @@ mvn exec:java
 ##### To reproduce the bug, do the following;
 
 1. Stop only the `microservice-client` service
-2. Go into `microservice-client/pom.xml` and replace `<spring-cloud.version>Finchley.RC1</spring-cloud.version>` with `<spring-cloud.version>Finchley.RELEASE</spring-cloud.version>`
+2. Go into `microservice-client/pom.xml` and replace `<spring-cloud.version>Finchley.SR1</spring-cloud.version>` with `<spring-cloud.version>Finchley.RELEASE</spring-cloud.version>`
 3. Comment the following lines at the bottom of the `pom.xml` file
  ```
  <!--<repositories>
