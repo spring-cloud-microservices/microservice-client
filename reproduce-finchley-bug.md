@@ -15,7 +15,7 @@
  - microservice-discovery
  - microservice-client
  - microservice-domain
- - microservice-props
+ - microservice-vault
 
 2. Add the following lines to your /etc/hosts file
 ```
@@ -32,7 +32,7 @@ GITHUB_REPO_PASSWORD = <your-own-git-repository-password>
 
 4. Check inside `microservice-config/src/main/resources/bootstrap-dev.properties` file, and update the following;
 ```
-spring.cloud.config.server.git.uri = <the-absolute-the-path-to-your-own 'microservice-props'>
+spring.cloud.config.server.git.uri = <the-absolute-the-path-to-your-own 'microservice-vault'>
 ```
 
 5. From your terminal, change directory into `microservice-domain` and the issue the following commands to install the `microservice-domain` library into your maven repository;
@@ -41,7 +41,7 @@ cd microservice-domain
 mvn clean install
 ```
 
-6. Start your database server - in my case it was postgres but you can use any relational database (e.g mysql, oracle, etc.). Make sure you set the database connection properties in `microservice-props/microservice-client/application-dev.properties`
+6. Start your database server - in my case it was postgres but you can use any relational database (e.g mysql, oracle, etc.). Make sure you set the database connection properties in `microservice-vault/microservice-client/application-dev.properties`
 
 ```
 spring.datasource.url=jdbc:postgresql://127.0.0.1:5432/microservice // <--- your own db connection url
